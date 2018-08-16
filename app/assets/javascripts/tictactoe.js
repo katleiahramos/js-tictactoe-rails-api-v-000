@@ -1,5 +1,9 @@
 // Code your JavaScript / jQuery solution here
+<<<<<<< HEAD
 const winCombinations = [
+=======
+const  winCombinations = [
+>>>>>>> 347b2aa596c208fc79743ae94a108e50306e9587
   [0,1,2],
   [3,4,5],
   [6,7,8],
@@ -11,12 +15,15 @@ const winCombinations = [
 ]
 
 var turn = 0
+<<<<<<< HEAD
 
 $(document).ready(function() {
   attachListeners();
 });
 
 
+=======
+>>>>>>> 347b2aa596c208fc79743ae94a108e50306e9587
 var player = function () {
   if ( this.turn % 2 === 0) {
     return "X"
@@ -31,10 +38,14 @@ var updateState = function (square) {
   // 3. find the current token using player
   // 4. updates that element in the table with current token
   var token = player();
+<<<<<<< HEAD
   if (square.innerHTML) {
     debugger
     $(square).text(token);
   }
+=======
+  $(square).text(token);
+>>>>>>> 347b2aa596c208fc79743ae94a108e50306e9587
 
 }
 
@@ -57,11 +68,19 @@ var checkWinner = function() {
   // Returns true if the current board contains any winning combinations (three X or O tokens in a row, vertically, horizontally, or diagonally). Otherwise, returns false.
   var board = {}
   var winner = false
+<<<<<<< HEAD
   // populateBoard(['X', 'O', 'X', 'X', 'O', 'X', 'O', 'X', 'O']);
   $('td').text((index, square) => board[index] = square);
   // If there is a winning combination on the board, checkWinner() should invoke setMessage(), passing in the appropriate string based on who won: 'Player X Won!' or 'Player O Won!'
   winCombinations.some(function(combo){
     if(board[combo[0]] !== "" && board[combo[0]] == board[combo[1]] && board[combo[1]] ==  board[combo[2]]){
+=======
+  populateBoard(['X', 'O', 'X', 'X', 'O', 'X', 'O', 'X', 'O']);
+  $('td').text((index, square) => board[index] = square);
+  // If there is a winning combination on the board, checkWinner() should invoke setMessage(), passing in the appropriate string based on who won: 'Player X Won!' or 'Player O Won!'
+  winCombinations.some(function(combo){
+    if(board[combo[0]] == board[combo[1]] && board[combo[1]] ==  board[combo[2]]){
+>>>>>>> 347b2aa596c208fc79743ae94a108e50306e9587
       // Player (winning token) Won!
        var winningToken = board[combo[0]]
        setMessage(`Player ${winningToken} Won!`)
@@ -70,6 +89,7 @@ var checkWinner = function() {
   })
   return winner
 }
+<<<<<<< HEAD
 
 
 var doTurn = function(square) {
@@ -102,3 +122,5 @@ var attachListeners = function() {
     doTurn(this)
   })
 }
+=======
+>>>>>>> 347b2aa596c208fc79743ae94a108e50306e9587
